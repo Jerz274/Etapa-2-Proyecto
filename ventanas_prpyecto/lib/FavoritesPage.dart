@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:ventanas_prpyecto/provider.dart';
+
 
 class FavoritesPage extends StatefulWidget {
   @override
@@ -7,9 +10,16 @@ class FavoritesPage extends StatefulWidget {
 
 class _RecetasFavoritasScreenState extends State<FavoritesPage> {
   List<String> recetasFavoritas = [    'Pizza Margherita',    'Hamburguesa con queso',    'Ensalada César',    'Pollo a la parrilla',    'Sushi',    'Tacos de pescado',    'Pastel de chocolate',  ];
+  
+
+
+
+  
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<ProviderApp>(context);
+    print(provider.recetaList.map((e) => null));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

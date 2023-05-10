@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:ventanas_prpyecto/provider.dart';
 import 'EmailScreen.dart';
 import 'LoginScreen.dart';
+import 'package:provider/provider.dart';
 
-
-void main() => runApp(MyApp());
+void main() {
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_)=> ProviderApp())
+      ],
+      child: MyApp(),
+    )
+  );
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -14,6 +24,7 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+
 
 class RegistrationScreen extends StatelessWidget {
   @override
