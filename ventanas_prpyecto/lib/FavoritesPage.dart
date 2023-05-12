@@ -12,15 +12,13 @@ class _RecetasFavoritasScreenState extends State<FavoritesPage> {
   List<String> recetasFavoritas = [    'Pizza Margherita',    'Hamburguesa con queso',    'Ensalada César',    'Pollo a la parrilla',    'Sushi',    'Tacos de pescado',    'Pastel de chocolate',  ];
   
 
-
+    
 
   
 
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<ProviderApp>(context);
-
-    print(provider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -33,10 +31,8 @@ class _RecetasFavoritasScreenState extends State<FavoritesPage> {
           onPressed: () => Navigator.pop(context),
         ),
       ),
-      body: ListView.builder(
-        itemCount: recetasFavoritas.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
+      body: ListView(
+        children: provider.recetaList.map((e) => Card(
             margin: EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
             child: ListTile(
               leading: Image.asset(
@@ -44,7 +40,7 @@ class _RecetasFavoritasScreenState extends State<FavoritesPage> {
                 height: 50.0,
               ),
               title: Text(
-                recetasFavoritas[index],
+                e.name,
                 style: TextStyle(fontWeight: FontWeight.bold),
               ),
               subtitle: Text('Tiempo de preparación: 30 minutos'),
@@ -53,9 +49,8 @@ class _RecetasFavoritasScreenState extends State<FavoritesPage> {
                 // Lógica para abrir la pantalla de detalle de la receta
               },
             ),
-          );
-        },
-      ),
+          )).toList()
+      )
     );
   }
 }
