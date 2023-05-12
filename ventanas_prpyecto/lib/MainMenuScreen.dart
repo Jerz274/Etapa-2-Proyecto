@@ -81,7 +81,7 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
             ),
             SizedBox(height: 10),
             Text(
-              'Nombre y Apellido',
+              'Sasha Gomez',
               style: TextStyle(
                 fontSize: 22,
                 fontWeight: FontWeight.bold,
@@ -89,21 +89,21 @@ class _MainMenuScreenState extends State<MainMenuScreen> {
             ),
             SizedBox(height: 5),
             Text(
-              '@usuario, País',
+              '@sarach',
               style: TextStyle(
                 fontSize: 18,
               ),
             ),
             SizedBox(height: 5),
             Text(
-              'País',
+              'Peru',
               style: TextStyle(
                 fontSize: 18,
               ),
             ),
             SizedBox(height: 5),
             Text(
-              'Descripcion',
+              'La mas caliente',
               style: TextStyle(
                 fontSize: 18,
               ),

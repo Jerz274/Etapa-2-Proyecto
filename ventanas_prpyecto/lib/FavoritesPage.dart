@@ -19,7 +19,8 @@ class _RecetasFavoritasScreenState extends State<FavoritesPage> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<ProviderApp>(context);
-    print(provider.recetaList.map((e) => null));
+
+    print(provider);
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,

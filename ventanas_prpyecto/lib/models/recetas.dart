@@ -1,25 +1,25 @@
 // To parse this JSON data, do
 //
-//     final recetas = recetasFromJson(jsonString);
+//     final listaReceta = listaRecetaFromJson(jsonString);
 
 import 'dart:convert';
 
-List<Recetas> recetasFromJson(String str) => List<Recetas>.from(json.decode(str).map((x) => Recetas.fromJson(x)));
+List<ListaReceta> listaRecetaFromJson(String str) => List<ListaReceta>.from(json.decode(str).map((x) => ListaReceta.fromJson(x)));
 
-String recetasToJson(List<Recetas> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
+String listaRecetaToJson(List<ListaReceta> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
-class Recetas {
+class ListaReceta {
     int id;
     String name;
     String description;
 
-    Recetas({
+    ListaReceta({
         required this.id,
         required this.name,
         required this.description,
     });
 
-    factory Recetas.fromJson(Map<String, dynamic> json) => Recetas(
+    factory ListaReceta.fromJson(Map<String, dynamic> json) => ListaReceta(
         id: json["id"],
         name: json["name"],
         description: json["description"],

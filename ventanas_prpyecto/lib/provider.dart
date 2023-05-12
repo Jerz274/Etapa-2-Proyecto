@@ -7,7 +7,7 @@ class ProviderApp extends ChangeNotifier{
 
   final String _domain = 'pokeapi.co';
 
-  List<Recetas> recetaList = [];
+  List<ListaReceta> recetaList = [];
 
   ProviderApp(){
     getAllRecetas();
@@ -18,8 +18,10 @@ class ProviderApp extends ChangeNotifier{
     Uri url = Uri.https("recetas-api.onrender.com", '/api/recetas/');
 
     final response = await http.get(url);
+    print (response  );
+    //http.post(url,body: {} );
 
-    List<Recetas> data = List<Recetas>.from(json.decode(response.body));
+    final data = listaRecetaFromJson(response.body);
 
     recetaList = [...recetaList, ...data];
 
